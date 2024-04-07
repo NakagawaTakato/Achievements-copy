@@ -1,0 +1,49 @@
+.container {
+    margin: 50px 0px 0px 100px;
+}
+
+.container-text {
+    margin: -27px 0px 0px 50px;
+}
+
+.container-exit {
+    color: white;
+    background-color: #305DFF;
+    text-decoration: none;
+    font-size: 24px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+}
+
+.container-text {
+    color: #305DFF;
+    font-weight: bold;
+}
+
+.container-bar {
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container-dropdown {
+    appearance: none;
+}
+
+.container-dropdown::-ms-expand {
+    display: none;
+}
+
+.container-bar .container-dropdown:last-of-type,
+.container-bar .container-dropdown:first-of-type {
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+    border-right: 1px solid #E2E2E2;
+}
+
+.container-input {
+    flex-grow: 1;
+    border: none;
+}

@@ -1,0 +1,96 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #EEEEEE;
+    height: 750px;
+}
+
+.container-group {
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+
+.container-group-exit {
+    color: white;
+    background-color: #305DFF;
+    text-decoration: none;
+    font-size: 24px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+}
+
+.container-group-text {
+    margin: -27px 0px 0px 50px;
+    color: #305DFF;
+    font-weight: bold;
+}
+
+.container-group-unit {
+    margin: 60px 0px 0px 0px;
+}
+
+.container-group-unit-title {
+    margin: -57px 0px 0px 50px;
+}
+
+.container-group-unit-image {
+    width: 560px;
+    height: auto;
+}
+
+.container-box {
+    position: relative;
+    margin: 80px 50px 0px 0px;
+    background-color: #305DFF;
+    width: 500px;
+    height: 500px;
+}
+
+.container-box-text {
+    position: absolute;
+    color: #FFFFFF;
+    left: 20px;
+}
+
+.container-box-date {
+    width: 30%;
+    position: absolute;
+    bottom: 400px;
+    left: 20px;
+    border-radius: 3px;
+}
+
+.container-box-time {
+    width: 80%;
+    position: absolute;
+    bottom: 370px;
+    left: 20px;
+    border-radius: 3px;
+}
+
+.container-box-number {
+    width: 80%;
+    position: absolute;
+    bottom: 340px;
+    left: 20px;
+    border-radius: 3px;
+}
+
+.container-box-button {
+    position: absolute;
+    width: 100%;
+    padding: 15px 10px;
+    bottom: 3px;
+    color: white;
+    border: none;
+    background-color: #0538FF;
+    border-radius: 3px;
+}
+
+.container-group-bar-dropdown-option {
+    color: black;
+}

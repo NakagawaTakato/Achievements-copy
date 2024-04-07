@@ -1,0 +1,51 @@
+.container {
+    margin: 50px 0px 0px 100px;
+}
+
+.container-text {
+    margin: -27px 0px 0px 50px;
+}
+
+.container-exit {
+    color: white;
+    background-color: #305DFF;
+    text-decoration: none;
+    font-size: 24px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+}
+
+.container-text {
+    color: #305DFF;
+    font-weight: bold;
+}
+
+.wrapper {
+    padding-top: 80px;
+    margin: 100px 0px 0px 450px;
+    height: 225px;
+    width: 320px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper-text {
+    font-weight: bold;
+    text-align: center;
+}
+
+.wrapper-button {
+    display: inline-block;
+    padding-top: 5px;
+    width: 120px;
+    height: 30px;
+    border-radius: 5px 5px 5px 5px;
+    color: white;
+    position: relative;
+    left: 100px;
+    top: 45px;
+    background-color: #0000FF;
+    text-decoration: none;
+    text-align: center;
+}

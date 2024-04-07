@@ -1,0 +1,95 @@
+.container {
+    margin: 50px 0px 0px 100px;
+}
+
+.container-text {
+    margin: -27px 0px 0px 50px;
+}
+
+.container-exit {
+    color: white;
+    background-color: #305DFF;
+    text-decoration: none;
+    font-size: 24px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+}
+
+.container-text {
+    color: #305DFF;
+    font-weight: bold;
+}
+
+.container-box {
+    position: relative;
+    top: 30px;
+}
+
+.container-box-about {
+    position: relative;
+    background-color: #305DFF;
+    width: 370px;
+    height: 230px;
+    border-radius: 3px;
+}
+
+.fa-solid.fa-check {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    color: #00FF00;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    padding: 2px;
+}
+
+.container-box-about-sub {
+    position: absolute;
+    top: 10px;
+    left: 90px;
+}
+
+.container-box-about-shop {
+    position: absolute;
+    top: 60px;
+    left: 20px;
+}
+
+.container-box-about-date {
+    position: absolute;
+    top: 90px;
+    left: 20px;
+}
+
+.container-box-about-time {
+    position: absolute;
+    top: 120px;
+    left: 20px;
+}
+
+.container-box-about-number {
+    position: absolute;
+    top: 150px;
+    left: 20px;
+}
+
+.container-box-sub,
+.container-box-shop,
+.container-box-date,
+.container-box-time,
+.container-box-number {
+    color: white;
+}
+
+.container-box-delete {
+    position: absolute;
+    top: 25px;
+    left: 310px;
+    background-color: transparent;
+    border-color: #FFFFFF;
+    border-radius: 50%;
+    color: #FFFFFF;
+}
