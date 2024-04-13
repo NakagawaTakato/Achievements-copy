@@ -61,7 +61,7 @@
         <input type="hidden" name="name" value="{{$author->name}}">
         <input type="hidden" name="image" value="{{$author->image}}">
         <input type="hidden" name="city" value="{{$author->city}}">
-        <input type="hidden" name="shop" value="{{$author->shop}}">
+        <input type="hidden" name="kinds" value="{{$author->kinds}}">
         <input type="hidden" name="group" value="{{$author->group}}">
         <button type="submit" class="wrapper-box-content-cat">詳しくみる</button>
       </form>
@@ -71,7 +71,7 @@
         <input type="hidden" name="name" value="{{$author->name}}">
         <input type="hidden" name="image" value="{{$author->image}}">
         <input type="hidden" name="city" value="{{$author->city}}">
-        <input type="hidden" name="shop" value="{{$author->shop}}">
+        <input type="hidden" name="kinds" value="{{$author->kinds}}">
           <button type="submit" class="wrapper-box-content-heart"><i class="fa-solid fa-heart"></i></button>
       </form>
     </div>

@@ -63,6 +63,7 @@
                 </select>
                 </div>
             </div>
+            <input type="hidden" name="shop_id" value="{!! $shop->id !!}">
             <input type="submit" class="reservation-btn" value="予約する">
         </form>
 

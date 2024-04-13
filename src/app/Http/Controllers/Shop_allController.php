@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Shop;
 use App\Models\Author;
 use App\Models\Category;
 
@@ -40,9 +39,12 @@ class Shop_allController extends Controller
 
     public function shop_detail(Request $request)
     {
+        $shopId = $request->input('shop'); // IDを取得
+        $shop = Shop::find($shopId); // IDを使用してショップのオブジェクトを取得
+
         $name = $request->input('name');
         $city = $request->input('city');
-        $shop = $request->input('shop');
+        $shop = $request->input('kinds');
         $image = $request->input('image');
         $group = $request->input('group');
 

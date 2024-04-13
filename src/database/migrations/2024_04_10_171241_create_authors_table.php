@@ -20,7 +20,7 @@ class CreateAuthorsTable extends Migration
             $table->string('name', 100);
             $table->string('image', 100);
             $table->string('city', 100);
-            $table->string('shop', 100);
+            $table->string('kinds', 100);
             $table->string('group', 200);
             $table->timestamps();
         });
