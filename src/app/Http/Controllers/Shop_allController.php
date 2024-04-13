@@ -87,4 +87,5 @@ class Shop_allController extends Controller
         $shops = Shop::all();
         return view('shops', compact('shops'));
     }
+
 }

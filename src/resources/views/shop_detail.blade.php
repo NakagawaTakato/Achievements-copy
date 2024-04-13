@@ -33,28 +33,37 @@
         
         <form action="/done" method="post">
             @csrf
-            <input type="date" name="date" class="container-box-date" required value="{{ old('date') }}">
-            <select class="container-box-time" name="time">
-                <option value="time" disabled selected hidden>時間を選択</option>
-                @foreach($wrappers as $wrapper)
-                    <option value="{{ $wrapper->id }}" >{{$wrapper->param}}</option>
+            <div class="reservation-card__content">
+                <h2 class="reservation-card__content__ttl">予約</h2>
+                @if (count($errors) > 0)
+                <ul class="error__lists">
+                @foreach ($errors->all() as $error)
+                <li>{{$error}}</li>
                 @endforeach
-            </select>
-            <select class="container-box-number" name="number">
-                <option value="number" disabled selected hidden>人数</option>
-                @foreach($numbers as $number)
-                    <option value="{{ $number->id }}" >{{$number->value}}</option>
-                @endforeach
-            </select>
-
-            <!-- <input type="hidden" name="name" value="{{$name}}">
-            <input type="hidden" name="city" value="{{$city}}">
-            <input type="hidden" name="shop" value="{{$shop}}">
-            <input type="hidden" name="image" value="{{$image}}">
-            <input type="hidden" name="shop" value="{{$shop}}">
-            <input type="hidden" name="group" value="{{$group}}"> -->
-
-            <button class="container-box-button" type="submit">予約する</button>
+                </ul>
+                @endif
+                <input type="hidden" name="shop_id" value="{!! $shop->id !!}">
+                <input class="reservation-card__date-input" type="date" value="{!! $today !!}" name="date" />
+                <div class="reservation-card__pull-down">
+                <select name="time">
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
+                    <option value="19:00">19:00</option>
+                    <option value="20:00">20:00</option>
+                    <option value="21:00">21:00</option>
+                    <option value="22:00">22:00</option>
+                </select>
+                </div>
+                <div class="reservation-card__pull-down">
+                <select name="user_num">
+                    <option value="1">1人</option>
+                    <option value="2">2人</option>
+                    <option value="3">3人</option>
+                    <option value="4">4人</option>
+                </select>
+                </div>
+            </div>
+            <input type="submit" class="reservation-btn" value="予約する">
         </form>
 
     </div>
