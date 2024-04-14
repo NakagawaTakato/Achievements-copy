@@ -24,7 +24,6 @@ class CreateShopsTable extends Migration
 
             $table->foreign('area_id')->references('id')->on('areas');
             $table->foreign('genre_id')->references('id')->on('genres');
-            $table->timestamps();
         });
     }
 

@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\Shop_allController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ShopsController;
+use App\Http\Controllers\ReservationsController;
+use App\Http\Controllers\FavoriteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +19,11 @@ use App\Http\Controllers\Shop_allController;
 |
 */
 
-Route::get('/', [ShopController::class, 'index'])->name('root');;
+Route::get('/', [ShopController::class, 'index']);
 Route::get('/search', [Shop_allController::class, 'search']);
 Route::post('/register/thanks', [ShopController::class, 'thanks']);
 Route::post('/login/menu_two', [ShopController::class, 'menu_two']);
-Route::get('/shop_all', [Shop_allController::class, 'shop_all']);
-Route::delete('/shop_all', [Shop_allController::class, 'shop_all']);
+Route::get('/shop_all', [ShopsController::class, 'shop_all'])->name('root');
 Route::post('/shop_all/shop_detail', [Shop_allController::class, 'shop_detail']);
 Route::post('/done', [Shop_allController::class, 'done']);
 

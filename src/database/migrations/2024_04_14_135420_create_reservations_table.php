@@ -24,7 +24,6 @@ class CreateReservationsTable extends Migration
 
             $table->foreign('shop_id')->references('id')->on('shops');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->timestamps();
         });
     }
 

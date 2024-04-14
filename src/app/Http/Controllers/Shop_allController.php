@@ -27,16 +27,6 @@ class Shop_allController extends Controller
         return view('shop_all', ['authors' => $authors, 'categories' => $categories]);
     }
 
-    public function shop_all(Request $request)
-    {
-        $authors = Author::all();
-        $categories = Category::all();
-
-
-        // ビューにデータを渡す
-        return view('shop_all', ['authors' => $authors, 'categories' => $categories]);
-    }
-
     public function shop_detail(Request $request)
     {
         $shopId = $request->input('shop'); // IDを取得

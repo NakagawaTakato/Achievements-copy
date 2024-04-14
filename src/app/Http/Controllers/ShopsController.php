@@ -8,11 +8,11 @@ use Carbon\Carbon;
 
 class ShopsController extends Controller
 {
-    public function index()
+    public function shop_all()
     {
         $shops = Shop::getShops();
         session()->flash('fs_msg', null);
-        return view('index', compact("shops"));
+        return view('shop_all', compact("shops"));
     }
     public function search(Request $request)
     {
