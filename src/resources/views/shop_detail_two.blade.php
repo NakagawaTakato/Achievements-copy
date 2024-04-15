@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/shop_detail.css') }}">
+<link rel="stylesheet" href="{{ asset('css/shop_detail_two.css') }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 @endsection
 
@@ -31,31 +31,27 @@
     <div class="container-box">
         <h1 class="container-box-text">予約</h1>
         
-        <form action="/shop_all/shop_detail/shop_detail_two" method="post">
+        <form action="/my_page" method="post">
             @csrf
-            <input type="date" name="date" class="container-box-date" required value="{{ old('date') }}">
-            <select class="container-box-time" name="time">
-                <option value="time" disabled selected hidden>時間を選択</option>
-                @foreach($wrappers as $wrapper)
-                    <option value="{{ $wrapper->id }}" {{ old('time') == $wrapper->id ? 'selected' : '' }}>{{$wrapper->param}}</option>
-                @endforeach
-            </select>
-            <select class="container-box-number" name="number">
-                <option value="number" disabled selected hidden>人数</option>
-                @foreach($numbers as $number)
-                    <option value="{{ $number->id }}" {{ old('fake') == $number->id ? 'selected' : '' }}>{{$number->value}}</option>
-                @endforeach
-            </select>
+            <div class="container-box-group">
+                <p class="container-box-group-name_display">Shop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $name }}</p>
+                <p class="container-box-group-date_display">Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $date }}</p>
+                <p class="container-box-group-time_display">time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $time->param }}</p>
+                <p class="container-box--group-number_display">Number&nbsp;&nbsp;&nbsp;&nbsp;{{ $fake->value }}</p>
+            </div>
+
 
             <input type="hidden" name="name" value="{{$name}}">
             <input type="hidden" name="city" value="{{$city}}">
             <input type="hidden" name="shop" value="{{$shop}}">
             <input type="hidden" name="image" value="{{$image}}">
-            <input type="hidden" name="shop" value="{{$shop}}">
-            <input type="hidden" name="group" value="{{$group}}">
-
+            <input type="hidden" name="date" value="{{$date}}">
+            <input type="hidden" name="time" value="{{ $time->id }}">
+            <input type="hidden" name="number" value="{{ $fake->id }}">
             <button class="container-box-button" type="submit">予約する</button>
+
         </form>
+        
 
     </div>
 </div>

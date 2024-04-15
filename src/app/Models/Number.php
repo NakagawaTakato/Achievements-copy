@@ -5,12 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Area extends Model
+class Number extends Model
 {
     use HasFactory;
 
-    public function shop()
+    protected $guarded = [
+        'id',
+    ];
+
+    public function category()
     {
-        return $this->hasMany(Shop::class);
+        return $this->belongsTo(Number::class);
     }
 }

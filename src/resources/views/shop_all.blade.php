@@ -7,116 +7,77 @@
 
 @section('content')
 @csrf
-<div class="flex align-items-center">
-	<div id="hamburger" class="header__hamburger">
-		<span></span>
-		<span></span>
-		<span></span>
-	</div>
-	<h1 class="header__ttl">Rese</h1>
-</div>
+<div class="container">
+    <a href="#" class="container-exit"><i class="fa-solid fa-bars"></i></a>
+    <p class="container-text">Rese</p>
 
-<header>
-  <div class="header align-items-center flex">
-    <x-hamburger-menu />
-    @if(request()->path() == '/' || request()->path() == 'search')
-      <x-search />
-    @endif
-  </div>
-  @if (session('fs_msg'))
-    <div class="flash_message">
-      {{ session('fs_msg') }}
-    </div>
-  @endif
-
-  <x-drowmenu />
-</header>
-
-<div class="search">
-	<!-- No surplus words or unnecessary actions. - Marcus Aurelius -->
-	<form class="flex" action="/search" method="GET">
-		@csrf
-		<div class="search__pull-down">
-			<select name="area">
-				<option value="">All area</option>
-				@foreach($areas as $area)
-					@if (!empty($area_name))
-						@if ($area->name === $area_name)
-							<option value="{!! $area->name !!}" selected>
-								{{$area->name}}
-							</option>
-						@else
-							<option value="{!! $area->name !!}">
-								{{$area->name}}
-							</option>
-						@endif
-					@else
-						<option value="{!! $area->name !!}">
-							{{$area->name}}
-						</option>
-					@endif
-				@endforeach
-			</select>
-		</div>
-		<div class="search__pull-down">
-			<select name="genre">
-				<option value="">All genre</option>
-				@foreach($genres as $genre)
-					@if (!empty($genre_name))
-						@if ($genre->name === $genre_name)
-							<option value="{!! $genre->name !!}" selected>
-								{{$genre->name}}
-							</option>
-						@else
-							<option value="{!! $genre->name !!}">
-								{{$genre->name}}
-							</option>
-						@endif
-					@else
-						<option value="{!! $genre->name !!}">
-							{{$genre->name}}
-						</option>
-					@endif
-				@endforeach
-			</select>
-		</div>
-		<input class="search__keyword" type="text" placeholder="Search ..." value="{!! $keyword ?? '' !!}" name="keyword" />
-		<input type="submit" class="search__btn" value="検索" />
-	</form>
-</div>
-
-<div class="main">
-  <div class="flex wrap shops">
-    @foreach($shops as $shop)
-    <div class="shop-card">
-      <img class="shop-card__img" src="{!! $shop->image_url !!}" alt="shop-img" />
-      <div class="shop-card__content">
-        <h2 class="shop-card__content__ttl">{{$shop->name}}</h2>
-        <p class="shop-card__content__txt">
-          #{{$shop->area->name}}&nbsp;#{{$shop->genre->name}}
-        </p>
-        <div class="flex align-items-center">
-          <a class="shop-card__content__link" href="{!! '/detail/' . $shop->id !!}">
-            詳しくみる
-          </a>
-          <!-- @if( Auth::check() ) -->
-            @if(count($shop->likes) == 0)
-            <form class="ml-a" method="POST" action="{{ route('like', ['shop_id' => $shop->id]) }}">
-              @csrf
-              <input class="shop-card__content__icon inactive" type="image" src="/img/unlike.png" alt="いいね" width="32px" height="32px">
+    <div class="container-group">
+        <div class="container-group-bar">
+            <form class="container-group-bar" action="/search" method="get">
+                <select class="container-group-bar-dropdown" name="area">
+                    <option value="" disabled selected hidden>All area</option>
+                    <option value="1" @if( request('gender')==1 ) selected @endif>東京都</option>
+                    <option value="2" @if( request('gender')==2 ) selected @endif>大阪府</option>
+                    <option value="3" @if( request('gender')==3 ) selected @endif>福岡県</option>
+                </select>
+                <select class="container-group-bar-dropdown" name="category_id">
+                    <option value="" disabled selected hidden>All genre</option>
+                    @foreach($categories as $category)
+                    <option value="{{ $category->id }}" @if( request('category_id')==$category->id )    selected @endif
+                      >{{$category->content }}
+                    </option>
+                    @endforeach
+                </select>
+                <button class="container-group-bar-input" type="submit" value="検索"><i class="fa-solid fa-magnifying-glass"></i>Search ...</button>
             </form>
-            @else
-            <form class="ml-a" method="POST" action="{{ route('unlike', ['shop_id' => $shop->id]) }}">
-              @csrf
-              <input class="shop-card__content__icon inactive" type="image" src="/img/like.png" alt="いいねを外す" width="32px" height="32px">
-            </form>
-            @endif
-          <!-- @endif -->
         </div>
-      </div>
     </div>
-    @endforeach
+</div>
+
+<div class="wrapper">
+  @foreach ($authors as $author)
+    <div class="wrapper-box" id="{{$author->id}}">
+      <div class="wrapper-box-img">
+        <img src="{{ $author->image }}" alt="" />
+      </div>
+      <div class="wrapper-box-content">
+      <h2 class="wrapper-box-content-ttl">
+        {{$author->name}}
+      </h2>
+      <p class="wrapper-box-content-text">
+      @if($author->gender == 1)
+        #東京都
+      @elseif($author->gender == 2)
+        #大阪府
+      @else
+        #福岡県
+      @endif
+      </p>
+      <p class="wrapper-box-content-text-categories">
+        #{{$author->category->content}}
+      </p>
+      <form action="/shop_all/shop_detail" method="POST" >
+        @csrf
+        <input type="hidden" name="name" value="{{$author->name}}">
+        <input type="hidden" name="image" value="{{$author->image}}">
+        <input type="hidden" name="city" value="{{$author->city}}">
+        <input type="hidden" name="shop" value="{{$author->shop}}">
+        <input type="hidden" name="group" value="{{$author->group}}">
+        <button type="submit" class="wrapper-box-content-cat">詳しくみる</button>
+      </form>
+
+      <form action="/my_page" method="POST" >
+        @csrf
+        <input type="hidden" name="name" value="{{$author->name}}">
+        <input type="hidden" name="image" value="{{$author->image}}">
+        <input type="hidden" name="city" value="{{$author->city}}">
+        <input type="hidden" name="shop" value="{{$author->shop}}">
+          <button type="submit" class="wrapper-box-content-heart"><i class="fa-solid fa-heart"></i></button>
+      </form>
+    </div>
   </div>
+  @endforeach
+  <div class="wrapper-bottom"></div>
 </div>
 @endsection
 

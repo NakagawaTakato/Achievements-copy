@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Shop;
 use App\Models\Author;
 use App\Models\Category;
+use App\Models\Wrapper;
+use App\Models\Number;
+use App\Models\Emptyitem;
 
 
 class Shop_allController extends Controller
@@ -27,25 +31,66 @@ class Shop_allController extends Controller
         return view('shop_all', ['authors' => $authors, 'categories' => $categories]);
     }
 
-    public function shop_detail(Request $request)
+    public function shop_all(Request $request)
     {
-        $shopId = $request->input('shop'); // IDを取得
-        $shop = Shop::find($shopId); // IDを使用してショップのオブジェクトを取得
+        $authors = Author::all();
+        $categories = Category::all();
 
-        $name = $request->input('name');
-        $city = $request->input('city');
-        $shop = $request->input('kinds');
-        $image = $request->input('image');
-        $group = $request->input('group');
 
         // ビューにデータを渡す
-        return view('shop_detail', compact('name', 'city', 'shop', 'image', 'group'));
+        return view('shop_all', ['authors' => $authors, 'categories' => $categories]);
+    }
+
+    public function shop_detail(Request $request)
+    {
+        $name = $request->input('name');
+        $city = $request->input('city');
+        $shop = $request->input('shop');
+        $image = $request->input('image');
+        $group = $request->input('group');
+        $date = $request->input('date');
+        $time = $request->input('time');
+        $number = $request->input('number');
+        $wrappers = Wrapper::all();
+        $numbers = Number::all();
+
+        // ビューにデータを渡す
+        return view('shop_detail', compact('name', 'city', 'shop', 'image', 'group', 'date', 'time', 'number', 'wrappers', 'numbers'));
+    }
+
+    public function shop_detail_two(Request $request)
+    {
+        $name = $request->input('name');
+        $city = $request->input('city');
+        $shop = $request->input('shop');
+        $image = $request->input('image');
+        $group = $request->input('group');
+        $date = $request->input('date');
+        $timeId = $request->input('time');
+        $numberId = $request->input('number');
+        $time = Wrapper::find($timeId);
+        $fake = Number::find($numberId);
+
+        // ビューにデータを渡す
+        return view('shop_detail_two', compact('name', 'city', 'shop', 'image', 'group', 'date', 'time', 'fake', ));
     }
 
     public function mypage()
     {
-        $user = User::find(Auth::id())->with('reservations', 'likes.area', 'likes.genre', 'likes.likes')->first();
-        return view('/mypage', compact("user"));
+        $authors = Author::all();
+        // 配列としてデータを取得
+        $name = $request->input('name');
+        $city = $request->input('city');
+        $shop = $request->input('shop');
+        $image = $request->input('image');
+        $date = $request->input('date');
+        $timeId = $request->input('time');
+        $numberId = $request->input('number');
+        $time = Wrapper::find($timeId);
+        $fake = Number::find($numberId);
+
+        // 配列のデータをビューに渡す
+        return view('my_page', compact('authors', 'name', 'city', 'shop', 'image', 'date', 'time', 'fake'));
     }
 
     public function done()

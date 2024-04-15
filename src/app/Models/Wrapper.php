@@ -5,12 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Genre extends Model
+class Wrapper extends Model
 {
     use HasFactory;
 
-    public function shop()
+    protected $guarded = [
+        'id',
+    ];
+
+    public function category()
     {
-        return $this->hasMany(Shop::class);
+        return $this->belongsTo(Wrapper::class);
     }
 }

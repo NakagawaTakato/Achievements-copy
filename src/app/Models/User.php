@@ -40,12 +40,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function reservations()
-    {
-        return $this->belongsToMany(Shop::class, 'reservations')->withPivot('id', 'date', 'time', 'user_num');
-    }
-    public function likes()
-    {
-        return $this->belongsToMany(Shop::class, 'likes');
-    }
 }
