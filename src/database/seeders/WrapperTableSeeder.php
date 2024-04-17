@@ -22,11 +22,13 @@ class WrapperTableSeeder extends Seeder
             "21:00",
             "22:00",
             "23:00",
-            "24:00",
+            "24:00"
         ];
 
         foreach ($params as $param) {
-            DB::table('wrappers')->insert(['param' => ($param)]);
+            DB::table('wrappers')->insert([
+                'param' => $param,
+            ]);
         }
     }
 }

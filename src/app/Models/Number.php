@@ -13,8 +13,4 @@ class Number extends Model
         'id',
     ];
 
-    public function category()
-    {
-        return $this->belongsTo(Number::class);
-    }
 }

@@ -36,7 +36,7 @@
             <input type="date" name="date" class="container-box-date" required value="{{ old('date') }}">
 
             <div class="container-box-time">{{ $displays->param }}</div>
-            <input type="hidden" name="wrapper_id" value="{{ $wrappers['wrapper_id'] }}">
+            <input type="hidden" name="wrapper_id" value="{{ $my_authors['wrapper_id'] }}">
             <!-- <select class="container-box-time" name="time">
                 <option value="time" disabled selected hidden>時間を選択</option>
                 @foreach($wrappers as $wrapper)

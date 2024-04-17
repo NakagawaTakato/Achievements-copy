@@ -19,11 +19,13 @@ class NumberTableSeeder extends Seeder
             "2人",
             "3人",
             "4人",
-            "5人",
+            "5人"
         ];
 
         foreach ($values as $value) {
-            DB::table('numbers')->insert(['value' => ($value)]);
+            DB::table('numbers')->insert([
+                'value' => $value,
+            ]);
         }
     }
 }
