@@ -34,12 +34,15 @@
         <form action="/shop_all/shop_detail/shop_detail_two" method="post">
             @csrf
             <input type="date" name="date" class="container-box-date" required value="{{ old('date') }}">
-            <select class="container-box-time" name="time">
+
+            <div class="container-box-time">{{ $displays->param }}</div>
+            <input type="hidden" name="wrapper_id" value="{{ $wrappers['wrapper_id'] }}">
+            <!-- <select class="container-box-time" name="time">
                 <option value="time" disabled selected hidden>時間を選択</option>
                 @foreach($wrappers as $wrapper)
                     <option value="{{ $wrapper->id }}" {{ old('time') == $wrapper->id ? 'selected' : '' }}>{{$wrapper->param}}</option>
                 @endforeach
-            </select>
+            </select> -->
             <select class="container-box-number" name="number">
                 <option value="number" disabled selected hidden>人数</option>
                 @foreach($numbers as $number)

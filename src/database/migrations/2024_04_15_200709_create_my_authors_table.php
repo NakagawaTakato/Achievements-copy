@@ -16,6 +16,8 @@ class CreateMyAuthorsTable extends Migration
         Schema::create('my_authors', function (Blueprint $table) {
             $table->id();
             $table->date('date')->nullable();
+            $table->foreignId('wrapper_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('number_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

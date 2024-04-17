@@ -29,7 +29,7 @@
     </div>
 
     @foreach ($authors as $author)
-        @if(author->is_correct == 1)
+        @if($author->is_correct == 1)
         <div class="wrapper-box" id="{{$author->id}}">
             <div class="wrapper-box-img">
                 <img src="{{ $author->image }}" alt="" />

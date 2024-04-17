@@ -51,11 +51,11 @@ class Shop_allController extends Controller
         $date = $request->input('date');
         $time = $request->input('time');
         $number = $request->input('number');
-        $wrappers = Wrapper::all();
+        $displays = Wrapper::find($request->wrapper_id);
         $numbers = Number::all();
 
         // ビューにデータを渡す
-        return view('shop_detail', compact('name', 'city', 'shop', 'image', 'group', 'date', 'time', 'number', 'wrappers', 'numbers'));
+        return view('shop_detail', compact('name', 'city', 'shop', 'image', 'group', 'date', 'time', 'number', 'displays', 'numbers'));
     }
 
     public function shop_detail_two(Request $request)
