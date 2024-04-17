@@ -35,10 +35,10 @@ class Shop_allController extends Controller
     {
         $authors = Author::all();
         $categories = Category::all();
-
+        $wrapers = Wrapper::all();
 
         // ビューにデータを渡す
-        return view('shop_all', ['authors' => $authors, 'categories' => $categories]);
+        return view('shop_all', ['authors' => $authors, 'categories' => $categories, 'wrapers' => $wrapers]);
     }
 
     public function shop_detail(Request $request)
@@ -51,7 +51,9 @@ class Shop_allController extends Controller
         $date = $request->input('date');
         $time = $request->input('time');
         $number = $request->input('number');
+        $sample = $request->all();
         $displays = Wrapper::find($request->wrapper_id);
+        
         $numbers = Number::all();
 
         // ビューにデータを渡す
