@@ -68,6 +68,7 @@
 
       <form action="/like_thanks" method="POST" >
         @csrf
+        <input type="hidden" name="author_id" value="{{$author->id}}">
         <button type="submit" class="wrapper-box-content-heart"><i class="fa-solid fa-heart"></i></button>
       </form>
     </div>
