@@ -23,5 +23,8 @@ Route::get('/shop_all', [Shop_allController::class, 'shop_all']);
 Route::delete('/shop_all', [Shop_allController::class, 'shop_all']);
 Route::post('/shop_all/shop_detail', [Shop_allController::class, 'shop_detail']);
 Route::post('/shop_all/shop_detail/shop_detail_two', [Shop_allController::class, 'shop_detail_two']);
+Route::post('/like_thanks', [Shop_allController::class, 'like_thanks']);
+
+Route::get('/my_page', [Shop_allController::class, 'my_page']);
 Route::post('/my_page', [Shop_allController::class, 'my_page']);
 Route::delete('/my_page', [Shop_allController::class, 'my_page']);

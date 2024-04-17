@@ -75,7 +75,18 @@ class Shop_allController extends Controller
         return view('shop_detail_two', compact('name', 'city', 'shop', 'image', 'group', 'date', 'time', 'fake', ));
     }
 
-    public function mypage()
+    public function done()
+    {
+        return view('done');
+    }
+
+    public function like_thanks(Request $request)
+    {
+        $result = Author::where('is_correct', true)->get();
+        return view('like_thanks');
+    }
+    
+    public function my_page(Request $request)
     {
         $authors = Author::all();
         // 配列としてデータを取得
@@ -91,11 +102,6 @@ class Shop_allController extends Controller
 
         // 配列のデータをビューに渡す
         return view('my_page', compact('authors', 'name', 'city', 'shop', 'image', 'date', 'time', 'fake'));
-    }
-
-    public function done()
-    {
-        return view('done');
     }
 
     public function showShops()
