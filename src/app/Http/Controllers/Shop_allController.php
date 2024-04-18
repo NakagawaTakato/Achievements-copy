@@ -52,11 +52,13 @@ class Shop_allController extends Controller
         $date = $request->input('date');
         $time = $request->input('time');
         $number = $request->input('number');
+        $my_authors_display = Wrapper::all();
         $displays = Wrapper::find($request->wrapper_id);
+        $categories = Category::all();
         $numbers = Number::all();
 
         // ビューにデータを渡す
-        return view('shop_detail', compact('name', 'city', 'shop', 'image', 'group', 'date', 'time', 'number', 'displays', 'numbers'));
+        return view('shop_detail', compact('name', 'city', 'shop', 'image', 'group', 'date', 'time', 'number', 'my_authors_display', 'displays', 'numbers'));
     }
 
     public function shop_detail_two(Request $request)
