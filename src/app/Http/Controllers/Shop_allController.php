@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Shop;
 use App\Models\Author;
 use App\Models\Category;
@@ -53,7 +54,7 @@ class Shop_allController extends Controller
         $number = $request->input('number');
         $my_authors_display = Wrapper::all();
         $displays = Wrapper::find($my_authors_display->wrapper_id);
-        $categories = Category::all();
+        // $categories = Category::all();
         $numbers = Number::all();
 
         // ビューにデータを渡す
