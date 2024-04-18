@@ -35,16 +35,11 @@ class Shop_allController extends Controller
     {
         $authors = Author::all();
         $categories = Category::all();
-        $query = Wrapper::query();
-
-        if ($request->filled('wrapper_id')) {
-            $query->where('wrapper_id', $request->input('wrapper_id'));
-        }
-        $id = $query->get();
+        $wrappers = Wrapper::all();
 
 
         // ビューにデータを渡す
-        return view('shop_all', ['authors' => $authors, 'categories' => $categories, 'id' => $id]);
+        return view('shop_all', ['authors' => $authors, 'categories' => $categories, 'wrappers' => $wrappers]);
     }
 
     public function shop_detail(Request $request)
@@ -57,9 +52,7 @@ class Shop_allController extends Controller
         $date = $request->input('date');
         $time = $request->input('time');
         $number = $request->input('number');
-        $id = Wrapper::all();
         $displays = Wrapper::find($request->wrapper_id);
-        dd($displays);
         $numbers = Number::all();
 
         // ビューにデータを渡す
