@@ -63,9 +63,6 @@
         <input type="hidden" name="city" value="{{$author->city}}">
         <input type="hidden" name="shop" value="{{$author->shop}}">
         <input type="hidden" name="group" value="{{$author->group}}">
-        @foreach ($wrappers as $wrapper)
-          <input type="hidden" name="wrapper_id" value="{{ $wrapper->id }}">
-        @endforeach
         <button type="submit" class="wrapper-box-content-cat">詳しくみる</button>
       </form>
 
