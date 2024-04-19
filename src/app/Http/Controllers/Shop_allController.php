@@ -8,7 +8,7 @@ use App\Models\Author;
 use App\Models\Category;
 use App\Models\Wrapper;
 use App\Models\Number;
-use App\Models\Emptyitem;
+use App\Models\My_author;
 use Illuminate\Http\Request;
 
 
@@ -56,6 +56,21 @@ class Shop_allController extends Controller
 
         // ビューにデータを渡す
         return view('shop_detail', compact('name', 'city', 'shop', 'image', 'group', 'date', 'number', 'wrappers', 'numbers'));
+    }
+
+    public function shop_detail_two(Request $request)
+    {
+        $name = $request->input('name');
+        $city = $request->input('city');
+        $shop = $request->input('shop');
+        $image = $request->input('image');
+        $group = $request->input('group');
+
+        $contacts = $request->all();
+        $category = Wrapper::find($request->category_id);
+
+        // ビューにデータを渡す
+        return view('shop_detail_two', compact('name', 'city', 'shop', 'image', 'group' ));
     }
 
     public function done()
