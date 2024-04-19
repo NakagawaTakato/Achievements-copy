@@ -67,9 +67,10 @@ class Shop_allController extends Controller
         $group = $request->input('group');
 
         $contacts = $request->all();
+        $category = Category::find($request->category_id);
 
         // ビューにデータを渡す
-        return view('shop_detail_two', compact('name', 'city', 'shop', 'image', 'group', 'contacts' ));
+        return view('shop_detail_two', compact('name', 'city', 'shop', 'image', 'group', 'contacts', 'category' ));
     }
 
     public function done()

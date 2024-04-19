@@ -37,9 +37,11 @@
                 <p class="container-box-group-name_display">Shop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $name }}</p>
 
 
-                <td class="container-box-group-date_display">{{ $contacts['date'] }}</td>
-                <input type="hidden" name="date" value="{{ $contacts['date'] }}">                
+                <p class="container-box-group-date_display">{{ $contacts['date'] }}</p>
+                <input type="hidden" name="date" value="{{ $contacts['date'] }}">       
 
+                <p class="container-box-group-time_display">{{ $category->param }}</p>
+                <input type="hidden" name="wrapper_id" value="{{ $contacts['wrapper_id'] }}">
 
             </div>
 
@@ -48,7 +50,6 @@
             <input type="hidden" name="city" value="{{$city}}">
             <input type="hidden" name="shop" value="{{$shop}}">
             <input type="hidden" name="image" value="{{$image}}">
-            <input type="hidden" name="date" value="{{$date}}">
             <button class="container-box-button" type="submit">予約する</button>
 
         </form>
