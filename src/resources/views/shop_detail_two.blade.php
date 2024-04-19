@@ -36,13 +36,11 @@
             <div class="container-box-group">
                 <p class="container-box-group-name_display">Shop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $name }}</p>
 
-                
+
                 <td class="container-box-group-date_display">{{ $contacts['date'] }}</td>
                 <input type="hidden" name="date" value="{{ $contacts['date'] }}">                
 
 
-                <input type="hidden" name="category_id" value="{{ $contacts['category_id'] }}">
-                <p class="container-box--group-number_display">Number&nbsp;&nbsp;&nbsp;&nbsp;{{ $fake->value }}</p>
             </div>
 
 
