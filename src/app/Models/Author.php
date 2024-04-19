@@ -17,14 +17,4 @@ class Author extends Model
     {
         return $this->belongsTo(Category::class);
     }
-
-    public function Wrapper()
-    {
-        return $this->belongsTo(Wrapper::class);
-    }
-
-    public function Number()
-    {
-        return $this->belongsTo(Number::class);
-    }
 }

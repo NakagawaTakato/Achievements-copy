@@ -12,4 +12,15 @@ class Wrapper extends Model
     protected $guarded = [
         'id',
     ];
+
+    public function wrapper_category()
+    {
+        return $this->belongsTo(Wrapper::class);
+    }
+
+    public function number_category()
+    {
+        return $this->belongsTo(Number::class);
+    }
+
 }

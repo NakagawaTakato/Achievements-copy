@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Shop;
 use App\Models\Author;
@@ -10,6 +9,7 @@ use App\Models\Category;
 use App\Models\Wrapper;
 use App\Models\Number;
 use App\Models\Emptyitem;
+use Illuminate\Http\Request;
 
 
 class Shop_allController extends Controller
@@ -50,32 +50,12 @@ class Shop_allController extends Controller
         $image = $request->input('image');
         $group = $request->input('group');
         $date = $request->input('date');
-        $time = $request->input('time');
         $number = $request->input('number');
-        $my_authors_display = Wrapper::all();
-        $displays = Wrapper::find($my_authors_display->wrapper_id);
-        // $categories = Category::all();
+        $wrappers = Wrapper::all();
         $numbers = Number::all();
 
         // ビューにデータを渡す
-        return view('shop_detail', compact('name', 'city', 'shop', 'image', 'group', 'date', 'time', 'number', 'my_authors_display', 'displays', 'numbers'));
-    }
-
-    public function shop_detail_two(Request $request)
-    {
-        $name = $request->input('name');
-        $city = $request->input('city');
-        $shop = $request->input('shop');
-        $image = $request->input('image');
-        $group = $request->input('group');
-        $date = $request->input('date');
-        $timeId = $request->input('time');
-        $numberId = $request->input('number');
-        $time = Wrapper::find($timeId);
-        $fake = Number::find($numberId);
-
-        // ビューにデータを渡す
-        return view('shop_detail_two', compact('name', 'city', 'shop', 'image', 'group', 'date', 'time', 'fake', ));
+        return view('shop_detail', compact('name', 'city', 'shop', 'image', 'group', 'date', 'number', 'wrappers', 'numbers'));
     }
 
     public function done()
@@ -92,20 +72,12 @@ class Shop_allController extends Controller
     
     public function my_page(Request $request)
     {
+        $wrappers = Wrapper::all();
         $authors = Author::all();
-        // 配列としてデータを取得
-        $name = $request->input('name');
-        $city = $request->input('city');
-        $shop = $request->input('shop');
-        $image = $request->input('image');
         $date = $request->input('date');
-        $timeId = $request->input('time');
         $numberId = $request->input('number');
-        $time = Wrapper::find($timeId);
-        $fake = Number::find($numberId);
 
-        // 配列のデータをビューに渡す
-        return view('my_page', compact('authors', 'name', 'city', 'shop', 'image', 'date', 'time', 'fake'));
+        return view('my_page', compact('wrappers', 'authors', 'date'));
     }
 
     public function showShops()

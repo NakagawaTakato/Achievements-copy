@@ -31,31 +31,22 @@
     <div class="container-box">
         <h1 class="container-box-text">予約</h1>
         
-        <form action="/shop_all/shop_detail/shop_detail_two" method="post">
+        <form action="/my_page" method="post">
             @csrf
             <input type="date" name="date" class="container-box-date" required value="{{ old('date') }}">
 
-            <div class="container-box-time">{{ $displays->param }}</div>
-            <input type="hidden" name="wrapper_id" value="{{ $my_authors_display['wrapper_id'] }}">
-            <!-- <select class="container-box-time" name="time">
+            <select class="container-box-time" name="time">
                 <option value="time" disabled selected hidden>時間を選択</option>
                 @foreach($wrappers as $wrapper)
-                    <option value="{{ $wrapper->id }}" {{ old('time') == $wrapper->id ? 'selected' : '' }}>{{$wrapper->param}}</option>
+                    <option value="{{ $wrapper->id }}" {{ old('wrapper_id') == $wrapper->id ? 'selected' : '' }}>{{$wrapper->param}}</option>
                 @endforeach
-            </select> -->
+            </select>
             <select class="container-box-number" name="number">
                 <option value="number" disabled selected hidden>人数</option>
                 @foreach($numbers as $number)
-                    <option value="{{ $number->id }}" {{ old('fake') == $number->id ? 'selected' : '' }}>{{$number->value}}</option>
+                    <option value="{{ $number->id }}" {{ old('number_id') == $number->id ? 'selected' : '' }}>{{$number->value}}</option>
                 @endforeach
             </select>
-
-            <input type="hidden" name="name" value="{{$name}}">
-            <input type="hidden" name="city" value="{{$city}}">
-            <input type="hidden" name="shop" value="{{$shop}}">
-            <input type="hidden" name="image" value="{{$image}}">
-            <input type="hidden" name="shop" value="{{$shop}}">
-            <input type="hidden" name="group" value="{{$group}}">
 
             <button class="container-box-button" type="submit">予約する</button>
         </form>
