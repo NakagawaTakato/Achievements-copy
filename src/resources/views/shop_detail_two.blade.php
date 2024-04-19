@@ -40,7 +40,7 @@
                 <p class="container-box-group-date_display">{{ $contacts['date'] }}</p>
                 <input type="hidden" name="date" value="{{ $contacts['date'] }}">       
 
-                <p class="container-box-group-time_display">{{ $category->param }}</p>
+                <p class="container-box-group-time_display">{{ $wrapper->param }}</p>
                 <input type="hidden" name="wrapper_id" value="{{ $contacts['wrapper_id'] }}">
 
             </div>
