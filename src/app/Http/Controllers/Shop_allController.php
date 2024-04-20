@@ -70,8 +70,8 @@ class Shop_allController extends Controller
         $group = $request->input('group');
 
         $contacts = $request->all();
-        dd($request->all());
         $wrapper = Wrapper::find($request->wrapper_id);
+        dd($wrapper);
 
         // ビューにデータを渡す
         return view('shop_detail_two', compact('name', 'city', 'shop', 'image', 'group', 'contacts', 'wrapper' ));
