@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactRequest;
 use App\Models\User;
 use App\Models\Shop;
 use App\Models\Author;
@@ -10,6 +11,8 @@ use App\Models\Wrapper;
 use App\Models\Number;
 use App\Models\My_author;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Date;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 
 class Shop_allController extends Controller
