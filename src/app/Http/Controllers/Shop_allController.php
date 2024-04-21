@@ -96,10 +96,9 @@ class Shop_allController extends Controller
         $wrappers = My_author::all();
         $csvData = Wrapper::all();
         $authors = Author::all();
-        $date = $request->input('date');
         $numberId = $request->input('number');
 
-        return view('my_page', compact('wrapper', 'wrappers', 'csvData', 'authors', 'date'));
+        return view('my_page', compact('wrapper', 'wrappers', 'csvData', 'authors'));
     }
 
     public function showShops()
