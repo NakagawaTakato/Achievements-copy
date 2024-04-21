@@ -42,7 +42,7 @@
                 <p class="container-box-group-time_display">{{ $wrapper->param }}</p>
                 <input type="hidden" name="wrapper_id" value="{{ $contacts['wrapper_id'] }}">
 
-                <p class="container-box-group-time_display">{{ $number->value }}</p>
+                <p class="container-box-group-number_display">{{ $number->value }}</p>
                 <input type="hidden" name="number_id" value="{{ $contacts['number_id'] }}">
 
             </div>

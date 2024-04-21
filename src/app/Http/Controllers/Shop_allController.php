@@ -100,7 +100,7 @@ class Shop_allController extends Controller
         $date = $request->input('date');
         $numberId = $request->input('number');
 
-        return view('my_page', compact('wrappers', 'authors', 'date'));
+        return view('my_page', compact('wrappers', 'wrapper', 'wrapperies', 'csvData', 'authors', 'date'));
     }
 
     public function showShops()
