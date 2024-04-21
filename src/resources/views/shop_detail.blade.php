@@ -35,13 +35,13 @@
             @csrf
             <input type="date" name="date" class="container-box-date" required value="{{ old('date') }}">
 
-            <select class="container-box-time" name="time">
+            <select class="container-box-time" name="wrapper_id" id="">
                 <option value="time" disabled selected hidden>時間を選択</option>
                 @foreach($wrappers as $wrapper)
                     <option value="{{ $wrapper->id }}" {{ old('wrapper_id') == $wrapper->id ? 'selected' : '' }}>{{$wrapper->param}}</option>
                 @endforeach
             </select>
-            <select class="container-box-number" name="number">
+            <select class="container-box-number" name="number_id" id="">
                 <option value="number" disabled selected hidden>人数</option>
                 @foreach($numbers as $number)
                     <option value="{{ $number->id }}" {{ old('number_id') == $number->id ? 'selected' : '' }}>{{$number->value}}</option>

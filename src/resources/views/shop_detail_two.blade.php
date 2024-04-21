@@ -36,12 +36,14 @@
             <div class="container-box-group">
                 <p class="container-box-group-name_display">Shop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $name }}</p>
 
-
                 <p class="container-box-group-date_display">{{ $contacts['date'] }}</p>
                 <input type="hidden" name="date" value="{{ $contacts['date'] }}">       
 
                 <p class="container-box-group-time_display">{{ $wrapper->param }}</p>
                 <input type="hidden" name="wrapper_id" value="{{ $contacts['wrapper_id'] }}">
+
+                <p class="container-box-group-time_display">{{ $number->value }}</p>
+                <input type="hidden" name="number_id" value="{{ $contacts['number_id'] }}">
 
             </div>
 

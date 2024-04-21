@@ -17,8 +17,9 @@
             <form action="/shop_all" method="post">
                 @csrf
                 <i class="fa-solid fa-check"></i>
-                <p>{{$wrapper->wrapper_category->wrappers}}</p>
-                <p>{{$wrapper->number_category->numbers}}</p>
+                <p>{{ $wrapper['date'] }}</p>
+                <p>{{ $wrapper->category->param }}</p>
+                <p>{{ $wrapper->category->value }}</p>
                 @method('DELETE')
                 <button type="submit" class="container-box-delete"><i class="fa-solid fa-xmark"></i></button>
             </form>

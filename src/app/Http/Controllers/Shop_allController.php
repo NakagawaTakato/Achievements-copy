@@ -71,10 +71,11 @@ class Shop_allController extends Controller
 
         $contacts = $request->all();
         $wrapper = Wrapper::find($request->wrapper_id);
-        dd($wrapper);
+        $number = Number::find($request->number_id);
+
 
         // ビューにデータを渡す
-        return view('shop_detail_two', compact('name', 'city', 'shop', 'image', 'group', 'contacts', 'wrapper' ));
+        return view('shop_detail_two', compact('name', 'city', 'shop', 'image', 'group', 'contacts', 'wrapper', 'number'));
     }
 
     public function done()
@@ -92,6 +93,9 @@ class Shop_allController extends Controller
     public function my_page(Request $request)
     {
         $wrappers = Wrapper::all();
+        $wrapper = My_author::with('category')->paginate(7);
+        $wrapperies = Wrapper::all();
+        $csvData = My_author::all();
         $authors = Author::all();
         $date = $request->input('date');
         $numberId = $request->input('number');
