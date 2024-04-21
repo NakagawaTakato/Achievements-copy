@@ -13,12 +13,12 @@ class My_author extends Model
         'id',
     ];
 
-    public function wrapper_category()
+    public function wrapper()
     {
         return $this->belongsTo(Wrapper::class);
     }
 
-    public function number_category()
+    public function number()
     {
         return $this->belongsTo(Number::class);
     }
