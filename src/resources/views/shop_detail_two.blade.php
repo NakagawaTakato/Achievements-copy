@@ -12,7 +12,7 @@
         <p class="container-group-text">Rese</p>
 
         <div class="container-group-unit">
-            <form action="/my_page" method="POST" >
+            <form action="/done" method="POST" >
                 <button type="submit" class=""><i class="fa-solid fa-less-than"></i></button>
             </form>
 
@@ -31,7 +31,7 @@
     <div class="container-box">
         <h1 class="container-box-text">予約</h1>
         
-        <form action="/my_page" method="post">
+        <form action="/done" method="post">
             @csrf
             <div class="container-box-group">
                 <p class="container-box-group-name_display">Shop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $name }}</p>
