@@ -80,7 +80,7 @@ class Shop_allController extends Controller
 
     public function done(Request $request)
     {
-        My_author::create(
+        Wrapper::create(
             $request->only([
                 'date',
                 'wrapper_id',

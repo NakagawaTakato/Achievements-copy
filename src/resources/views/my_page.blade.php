@@ -12,12 +12,14 @@
     
     <div class="container-box">
         <h2>予約状況</h2>
-        @foreach($wrappers as $wrapper)
+        @foreach($categories as $category)
         <div class="container-box-about">
             <form action="/shop_all" method="post">
                 @csrf
                 <i class="fa-solid fa-check"></i>
-                <p>{{ $wrapper->date }}</p>
+                <p>{{ $category->date }}</p>
+                <p>{{ $category->param }}</p>
+                <p>{{ $category->value }}</p>
                 @method('DELETE')
                 <button type="submit" class="container-box-delete"><i class="fa-solid fa-xmark"></i></button>
             </form>
