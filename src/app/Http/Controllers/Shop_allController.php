@@ -78,8 +78,16 @@ class Shop_allController extends Controller
         return view('shop_detail_two', compact('name', 'city', 'shop', 'image', 'group', 'contacts', 'wrapper', 'number'));
     }
 
-    public function done()
+    public function done(Request $request)
     {
+        My_author::create(
+            $request->only([
+                'date',
+                'wrapper_id',
+                'number_id'
+            ])
+        );
+
         return view('done');
     }
 
