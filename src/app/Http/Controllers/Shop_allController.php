@@ -69,10 +69,14 @@ class Shop_allController extends Controller
         $image = $request->input('image');
         $group = $request->input('group');
 
-        $contacts = $request->all();
+        $contacts = [
+            'date' => $request->input('date'),  // 単一の日付を取得
+            'wrapper_id' => $request->input('wrapper_id'),
+            'number_id' => $request->input('number_id')
+        ];
+
         $wrapper = Wrapper::find($request->wrapper_id);
         $number = Number::find($request->number_id);
-
 
         // ビューにデータを渡す
         return view('shop_detail_two', compact('name', 'city', 'shop', 'image', 'group', 'contacts', 'wrapper', 'number'));
