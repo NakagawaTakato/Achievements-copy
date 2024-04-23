@@ -92,13 +92,13 @@ class Shop_allController extends Controller
     
     public function my_page(Request $request)
     {
-        $wrapper = Wrapper::all();
-        $wrappers = My_author::all();
+        $wrappers = Wrapper::all();
+        $categories = My_author::all();
         $csvData = Wrapper::all();
         $authors = Author::all();
         $numberId = $request->input('number');
 
-        return view('my_page', compact('wrapper', 'wrappers', 'csvData', 'authors'));
+        return view('my_page', compact('wrappers', 'categories', 'csvData', 'authors'));
     }
 
     public function showShops()
