@@ -71,9 +71,18 @@
 }
 
 .container-box-about-date {
+    color: white;
     position: absolute;
-    top: 90px;
+    top: 70px;
     left: 20px;
+}
+
+.container-box-about-param {
+    color: white;
+}
+
+.container-box-about-value {
+    color: white;
 }
 
 .container-box-about-time {
