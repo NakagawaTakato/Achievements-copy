@@ -17,9 +17,9 @@
             <form action="/shop_all" method="post">
                 @csrf
                 <i class="fa-solid fa-check"></i>
-                <p>{{ $category->date }}</p>
-                <p>{{ $category->param }}</p>
-                <p>{{ $category->value }}</p>
+                <p class="container-box-about-date">{{ $category->date }}</p>
+                <p class="container-box-about-param">{{ $category->wrapper->param }}</p>
+                <p class="container-box-about-value">{{ $category->number->value }}</p>
                 @method('DELETE')
                 <button type="submit" class="container-box-delete"><i class="fa-solid fa-xmark"></i></button>
             </form>
@@ -49,22 +49,10 @@
                 <p class="wrapper-box-content-text-categories">
                 #{{$author->category->content}}
                 </p>
-                <form action="/shop_all/shop_detail" method="POST" >
-                    @csrf
-                    <input type="hidden" name="name" value="{{$author->name}}">
-                    <input type="hidden" name="image" value="{{$author->image}}">
-                    <input type="hidden" name="city" value="{{$author->city}}">
-                    <input type="hidden" name="shop" value="{{$author->shop}}">
-                    <input type="hidden" name="group" value="{{$author->group}}">
-                    <button type="submit" class="wrapper-box-content-cat">詳しくみる</button>
-                    </form>
 
-                <form action="/my_page" method="POST" >
+                <form action="/shop_all" method="POST" >
                     @csrf
-                    <input type="hidden" name="name" value="{{$author->name}}">
-                    <input type="hidden" name="image" value="{{$author->image}}">
-                    <input type="hidden" name="city" value="{{$author->city}}">
-                    <input type="hidden" name="shop" value="{{$author->shop}}">
+                    @method('DELETE')
                     <button type="submit" class="wrapper-box-content-heart"><i class="fa-solid fa-heart"></i></button>
                 </form>
             </div>

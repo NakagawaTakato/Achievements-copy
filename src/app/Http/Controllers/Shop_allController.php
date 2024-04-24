@@ -101,7 +101,7 @@ class Shop_allController extends Controller
     public function my_page(Request $request)
     {
         $wrappers = Wrapper::all();
-        $categories = My_author::all();
+        $categories = My_author::with(['wrapper', 'number'])->get();
         $csvData = Wrapper::all();
         $authors = Author::all();
         $numberId = $request->input('number');

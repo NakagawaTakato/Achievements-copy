@@ -35,6 +35,18 @@
     border-radius: 3px;
 }
 
+.container-box-about-date {
+    color: white;
+}
+
+.container-box-about-param {
+    color: white;
+}
+
+.container-box-about-value {
+    color: white;
+}
+
 .fa-solid.fa-check {
     position: absolute;
     top: 25px;
