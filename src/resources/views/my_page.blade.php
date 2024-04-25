@@ -15,12 +15,13 @@
         @foreach($categories as $category)
         <div class="container-box-about">
             <form action="/delete" method="post">
-                @method('DELETE')
                 @csrf
                 <i class="fa-solid fa-check"></i>
                 <p class="container-box-about-date">{{ $category->date }}</p>
                 <p class="container-box-about-param">{{ $category->wrapper->param }}</p>
                 <p class="container-box-about-value">{{ $category->number->value }}</p>
+                @method('DELETE')
+                <input type="hidden" name="id" value="{{ $category->id }}">
                 <button type="submit" class="container-box-delete"><i class="fa-solid fa-xmark"></i></button>
             </form>
         </div>

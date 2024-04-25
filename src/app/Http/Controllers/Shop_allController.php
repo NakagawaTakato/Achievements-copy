@@ -111,9 +111,8 @@ class Shop_allController extends Controller
 
     public function delete(Request $request)
     {
-        dd(My_author::find($request->id));
         My_author::find($request->id)->delete();
-        return redirect('/')->with('message', 'Todoを削除しました');
+        return redirect('/')->with('message', '削除しました');
     }
 
     public function showShops()
