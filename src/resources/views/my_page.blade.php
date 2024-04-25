@@ -14,7 +14,7 @@
         <h2>予約状況</h2>
         @foreach($categories as $category)
         <div class="container-box-about">
-            <form action="{{ route('deleteMethod', ['author_id' => $author->id]) }}" method="post">
+            <form action="/shop_all" method="post">
                 @csrf
                 @method('DELETE')
                 <i class="fa-solid fa-check"></i>

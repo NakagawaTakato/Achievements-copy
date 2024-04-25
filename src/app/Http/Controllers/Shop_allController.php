@@ -98,19 +98,6 @@ class Shop_allController extends Controller
         return view('like_thanks');
     }
     
-    public function deleteMethod(Request $request)
-    {
-        $authorId = $request->input('author_id'); // 削除するAuthorのIDをリクエストから取得
-        $author = Author::find($authorId); // IDに基づいてレコードを検索
-
-        if ($author) {
-            $author->delete(); // レコードが存在する場合、削除
-            return redirect('/shop_all')->with('status', '削除が完了しました。');
-        } else {
-            return redirect('/shop_all')->with('error', '削除するレコードが見つかりません。');
-        }
-    }
-
     public function my_page(Request $request)
     {
         $wrappers = Wrapper::all();
