@@ -14,13 +14,13 @@
         <h2>予約状況</h2>
         @foreach($categories as $category)
         <div class="container-box-about">
-            <form action="/shop_all" method="post">
+            <form action="{{ route('deleteMethod', ['author_id' => $author->id]) }}" method="post">
                 @csrf
+                @method('DELETE')
                 <i class="fa-solid fa-check"></i>
                 <p class="container-box-about-date">{{ $category->date }}</p>
                 <p class="container-box-about-param">{{ $category->wrapper->param }}</p>
                 <p class="container-box-about-value">{{ $category->number->value }}</p>
-                @method('DELETE')
                 <button type="submit" class="container-box-delete"><i class="fa-solid fa-xmark"></i></button>
             </form>
         </div>
