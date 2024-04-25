@@ -98,14 +98,6 @@ class Shop_allController extends Controller
         return view('like_thanks');
     }
     
-    public function destroy(Request $request)
-    {
-        $categoryId = $request->input('category_id');
-        My_author::where('id', $categoryId)->delete();
-
-        return redirect()->route('shop_all.index')->with('success', '予約をキャンセルしました。');
-    }
-
     public function my_page(Request $request)
     {
         $wrappers = Wrapper::all();
@@ -115,6 +107,12 @@ class Shop_allController extends Controller
         $numberId = $request->input('number');
 
         return view('my_page', compact('wrappers', 'categories', 'csvData', 'authors'));
+    }
+
+    public function delete(Request $request)
+    {
+        My_author::find($request->id)->delete();
+        return redirect('/')->with('message', 'Todoを削除しました');
     }
 
     public function showShops()

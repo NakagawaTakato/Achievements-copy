@@ -14,9 +14,9 @@
         <h2>予約状況</h2>
         @foreach($categories as $category)
         <div class="container-box-about">
-            <form action="{{ route('shop_all.destroy') }}" method="post">
-                @csrf
+            <form action="/delete" method="post">
                 @method('DELETE')
+                @csrf
                 <i class="fa-solid fa-check"></i>
                 <p class="container-box-about-date">{{ $category->date }}</p>
                 <p class="container-box-about-param">{{ $category->wrapper->param }}</p>
