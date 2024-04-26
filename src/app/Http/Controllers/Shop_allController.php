@@ -73,7 +73,6 @@ class Shop_allController extends Controller
         $wrapper = Wrapper::find($request->wrapper_id);
         $number = Number::find($request->number_id);
 
-
         // ビューにデータを渡す
         return view('shop_detail_two', compact('name', 'city', 'shop', 'image', 'group', 'contacts', 'wrapper', 'number'));
     }
@@ -82,6 +81,7 @@ class Shop_allController extends Controller
     {
         Wrapper::create(
             $request->only([
+                'param' => '17:00',
                 'date',
                 'wrapper_id',
                 'number_id'

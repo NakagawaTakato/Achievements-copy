@@ -28,6 +28,8 @@ class WrapperTableSeeder extends Seeder
         foreach ($params as $param) {
             DB::table('wrappers')->insert([
                 'param' => $param,
+                'created_at' => now(),
+                'updated_at' => now()
             ]);
         }
     }
