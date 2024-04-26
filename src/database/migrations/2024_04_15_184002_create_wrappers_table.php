@@ -15,7 +15,7 @@ class CreateWrappersTable extends Migration
     {
         Schema::create('wrappers', function (Blueprint $table) {
             $table->id();
-            $table->string('param');
+            $table->string('param')->nullable();
             $table->timestamps();
         });
     }
