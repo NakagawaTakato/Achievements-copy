@@ -81,10 +81,9 @@ class Shop_allController extends Controller
     {
         Wrapper::create(
             $request->only([
-                'param' => '17:00',
-                'date',
-                'wrapper_id',
-                'number_id'
+                'date' => $request->date,
+                'wrapper_id' => $request->wrapper_id,
+                'number_id' => $request->number_id,
             ])
         );
 
@@ -102,11 +101,10 @@ class Shop_allController extends Controller
     {
         $wrappers = Wrapper::all();
         $categories = My_author::with(['wrapper', 'number'])->get();
-        $csvData = Wrapper::all();
         $authors = Author::all();
         $numberId = $request->input('number');
 
-        return view('my_page', compact('wrappers', 'categories', 'csvData', 'authors'));
+        return view('my_page', compact('wrappers', 'categories', 'authors'));
     }
 
     public function delete(Request $request)
