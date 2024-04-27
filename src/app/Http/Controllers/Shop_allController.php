@@ -81,11 +81,10 @@ class Shop_allController extends Controller
     {
         Wrapper::create(
             $request->only([
-                'name_send' -> $request->input('name'),
                 'date',
                 'wrapper_id',
                 'number_id'
-            ])
+            ]) + ['name_send' => $request->input('name')]
         );
 
         return view('done');
