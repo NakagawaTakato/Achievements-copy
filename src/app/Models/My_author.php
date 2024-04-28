@@ -9,8 +9,11 @@ class My_author extends Model
 {
     use HasFactory;
 
-    protected $guarded = [
-        'id',
+    protected $fillable = [
+        'date',
+        'wrapper_id',
+        'number_id',
+        'name_send',
     ];
 
     public function wrapper()
