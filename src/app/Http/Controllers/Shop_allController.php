@@ -68,7 +68,6 @@ class Shop_allController extends Controller
         $shop = $request->input('shop');
         $image = $request->input('image');
         $group = $request->input('group');
-
         $contacts = $request->all();
         $wrapper = Wrapper::find($request->wrapper_id);
         $number = Number::find($request->number_id);
@@ -79,7 +78,7 @@ class Shop_allController extends Controller
 
     public function done(Request $request)
     {
-        Wrapper::create(
+        My_author::create(
             $request->only([
                 'date',
                 'wrapper_id',
@@ -100,11 +99,11 @@ class Shop_allController extends Controller
     public function my_page(Request $request)
     {
         $wrappers = Wrapper::all();
-        $categories = My_author::with(['wrapper', 'number'])->get();
+        $manys = My_author::with(['wrapper', 'number'])->get();
         $authors = Author::all();
         $numberId = $request->input('number');
 
-        return view('my_page', compact('wrappers', 'categories', 'authors'));
+        return view('my_page', compact('wrappers', 'manys', 'authors'));
     }
 
     public function delete(Request $request)

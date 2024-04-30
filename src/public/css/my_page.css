@@ -35,15 +35,31 @@
     border-radius: 3px;
 }
 
+.container-box-about-name {
+    position: absolute;
+    top: 45px;
+    left: 20px;
+    color: white;
+}
+
 .container-box-about-date {
+    position: absolute;
+    top: 70px;
+    left: 20px;
     color: white;
 }
 
 .container-box-about-param {
+    position: absolute;
+    top: 120px;
+    left: 20px;
     color: white;
 }
 
 .container-box-about-value {
+    position: absolute;
+    top: 160px;
+    left: 20px;
     color: white;
 }
 

@@ -12,17 +12,17 @@
     
     <div class="container-box">
         <h2>予約状況</h2>
-        @foreach($categories as $category)
+        @foreach($manys as $many)
         <div class="container-box-about">
             <form action="/delete" method="post">
                 @csrf
                 <i class="fa-solid fa-check"></i>
-                <p class="container-box-about-">{{ $category->name_send }}</p>
-                <p class="container-box-about-date">{{ $category->date }}</p>
-                <p class="container-box-about-param">{{ $category->wrapper->param }}</p>
-                <p class="container-box-about-value">{{ $category->number->value }}</p>
+                <p class="container-box-about-name">{{ $many->name_send }}</p>
+                <p class="container-box-about-date">{{ $many->date }}</p>
+                <p class="container-box-about-param">{{ $many->wrapper->param }}</p>
+                <p class="container-box-about-value">{{ $many->number->value }}</p>
                 @method('DELETE')
-                <input type="hidden" name="id" value="{{ $category->id }}">
+                <input type="hidden" name="id" value="{{ $many->id }}">
                 <button type="submit" class="container-box-delete"><i class="fa-solid fa-xmark"></i></button>
             </form>
         </div>
