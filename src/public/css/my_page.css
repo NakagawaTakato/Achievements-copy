@@ -29,6 +29,7 @@
 
 .container-box-about {
     position: relative;
+    margin-bottom: 20px;
     background-color: #305DFF;
     width: 370px;
     height: 230px;
@@ -44,7 +45,7 @@
 
 .container-box-about-date {
     position: absolute;
-    top: 70px;
+    top: 80px;
     left: 20px;
     color: white;
 }
@@ -86,21 +87,6 @@
     left: 20px;
 }
 
-.container-box-about-date {
-    color: white;
-    position: absolute;
-    top: 70px;
-    left: 20px;
-}
-
-.container-box-about-param {
-    color: white;
-}
-
-.container-box-about-value {
-    color: white;
-}
-
 .container-box-about-time {
     position: absolute;
     top: 120px;
@@ -129,4 +115,46 @@
     border-color: #FFFFFF;
     border-radius: 50%;
     color: #FFFFFF;
+}
+
+.wrapper-box {
+    position: relative;
+}
+
+.wrapper-box-img-detail {
+    width: 300px;
+    height: 150px;
+}
+
+.wrapper-box-content {
+    position: relative;
+    left: 10px;
+}
+
+.wrapper-box-content-text-categories {
+    position: absolute;
+    bottom: -16px;
+    left: 80px;
+}
+
+.wrapper-box-content-cat {
+    position: absolute;
+    bottom: -50px;
+    width: 100px;
+    color: white;
+    background-color: blue;
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.wrapper-box-content-heart {
+    position: absolute;
+    left: 250px;
+    bottom: -50px;
+}
+
+.fa-solid.fa-heart {
+    font-size: 25px;
+    color: red;
 }

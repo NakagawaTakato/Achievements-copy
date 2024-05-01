@@ -17,10 +17,10 @@
             <form action="/delete" method="post">
                 @csrf
                 <i class="fa-solid fa-check"></i>
-                <p class="container-box-about-name">{{ $many->name_send }}</p>
-                <p class="container-box-about-date">{{ $many->date }}</p>
-                <p class="container-box-about-param">{{ $many->wrapper->param }}</p>
-                <p class="container-box-about-value">{{ $many->number->value }}</p>
+                <p class="container-box-about-name">Shop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $many->name_send }}</p>
+                <p class="container-box-about-date">Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $many->date }}</p>
+                <p class="container-box-about-param">Time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $many->wrapper->param }}</p>
+                <p class="container-box-about-value">Number&nbsp;&nbsp;&nbsp;&nbsp;{{ $many->number->value }}</p>
                 @method('DELETE')
                 <input type="hidden" name="id" value="{{ $many->id }}">
                 <button type="submit" class="container-box-delete"><i class="fa-solid fa-xmark"></i></button>
@@ -33,7 +33,7 @@
         @if($author->is_correct == 1)
         <div class="wrapper-box" id="{{$author->id}}">
             <div class="wrapper-box-img">
-                <img src="{{ $author->image }}" alt="" />
+                <img class="wrapper-box-img-detail" src="{{ $author->image }}" alt="" />
             </div>
             <div class="wrapper-box-content">
                 <h2 class="wrapper-box-content-ttl">
@@ -52,11 +52,8 @@
                 #{{$author->category->content}}
                 </p>
 
-                <form action="/shop_all" method="POST" >
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="wrapper-box-content-heart"><i class="fa-solid fa-heart"></i></button>
-                </form>
+                <div class="wrapper-box-content-cat">詳しくみる</div>
+                <div class="wrapper-box-content-heart"><i class="fa-solid fa-heart"></i></div>
             </div>
         </div>
         @endif
