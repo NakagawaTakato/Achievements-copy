@@ -123,7 +123,7 @@
 
 .wrapper-box {
     display: flex;
-    flex-wrap: row;
+    flex-wrap: wrap;
     margin: 15px 0px 0px 490px;
 }
 
@@ -133,6 +133,7 @@
 }
 
 .wrapper-box-content {
+    width: 50%;
     position: relative;
     left: 10px;
 }
