@@ -29,7 +29,8 @@
         @endforeach
     </div>
 
-    <h2 class="wrapper">お気に入り店舗</h2>
+    <h2 class="favorite">お気に入り店舗</h2>
+    <div class="wrapper">
     @foreach ($authors as $author)
         @if($author->is_correct == 1)
         <div class="wrapper-box" id="{{$author->id}}">
@@ -59,6 +60,6 @@
         </div>
         @endif
     @endforeach
-    
+    </div>
 </div>
 @endsection

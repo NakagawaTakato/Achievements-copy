@@ -117,24 +117,22 @@
     color: #FFFFFF;
 }
 
-.wrapper {
+.favorite {
     margin: -520px 0px 0px 500px;
 }
 
-.wrapper-box-img {
+.wrapper {
     display: flex;
     flex-wrap: wrap;
     margin: 15px 0px 0px 490px;
 }
 
-.wrapper-box {
-    width: 53%;
-    padding: 10px;
-    box-sizing: border-box;
-}
+.wrapper-box-img {}
+
+.wrapper-box {}
 
 .wrapper-box-img-detail {
-    width: 100%;
+    width: 50%;
     height: auto;
 }
 
