@@ -39,9 +39,9 @@
             </div>
             <div class="wrapper-box-group">
                 <div class="wrapper-box-group-content">
-                    <h2 class="wrapper-box-content-group-ttl">
+                    <h3 class="wrapper-box-content-group-ttl">
                     {{$author->name}}
-                    </h2>
+                    </h3>
                     <p class="wrapper-box-content-group-text">
                     @if($author->gender == 1)
                     #東京都
