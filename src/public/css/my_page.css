@@ -148,6 +148,7 @@
     height: 150px;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
+    margin-top: -50px;
 }
 
 .wrapper-box-group-content {
