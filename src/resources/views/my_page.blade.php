@@ -37,25 +37,27 @@
             <div class="wrapper-box-img">
                 <img class="wrapper-box-img-detail" src="{{ $author->image }}" alt="" />
             </div>
-            <div class="wrapper-box-content">
-                <h2 class="wrapper-box-content-ttl">
-                {{$author->name}}
-                </h2>
-                <p class="wrapper-box-content-text">
-                @if($author->gender == 1)
-                #東京都
-                @elseif($author->gender == 2)
-                #大阪府
-                @else
-                #福岡県
-                @endif
-                </p>
-                <p class="wrapper-box-content-text-categories">
-                #{{$author->category->content}}
-                </p>
+            <div class="wrapper-box-group">
+                <div class="wrapper-box-group-content">
+                    <h2 class="wrapper-box-content-group-ttl">
+                    {{$author->name}}
+                    </h2>
+                    <p class="wrapper-box-content-group-text">
+                    @if($author->gender == 1)
+                    #東京都
+                    @elseif($author->gender == 2)
+                    #大阪府
+                    @else
+                    #福岡県
+                    @endif
+                    </p>
+                    <p class="wrapper-box-content-text-group-categories">
+                    #{{$author->category->content}}
+                    </p>
 
-                <div class="wrapper-box-content-cat">詳しくみる</div>
-                <div class="wrapper-box-content-heart"><i class="fa-solid fa-heart"></i></div>
+                    <div class="wrapper-box-content-group-cat">詳しくみる</div>
+                    <div class="wrapper-box-content-group-heart"><i class="fa-solid fa-heart"></i></div>
+                </div>
             </div>
         </div>
         @endif
