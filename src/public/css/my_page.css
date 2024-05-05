@@ -124,7 +124,7 @@
 .wrapper {
     display: flex;
     flex-wrap: wrap;
-    margin: -55px 0px 0px 490px;
+    margin: 0px 0px 0px 490px;
     gap: 40px;
 }
 
@@ -136,11 +136,12 @@
 }
 
 .wrapper-box-img-detail {
-    margin-top: 60px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     width: 100%;
     height: auto;
+    position: relative;
+    z-index: 1;
 }
 
 .wrapper-box-group {
@@ -149,23 +150,32 @@
     height: 130px;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
-    margin-top: -50px;
+    margin-top: -30px;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
 }
 
 .wrapper-box-group-content {
     width: 100%;
+    margin: 0px 0px 0px 10px;
 }
 
 .wrapper-box-content-group-ttl {
-    margin-top: 20px;
+    margin-top: 10px;
+    padding-top: 10px;
 }
 
-.wrapper-box-content-group-text {}
+.wrapper-box-content-group-text {
+    margin-top: -10px;
+}
 
-.wrapper-box-content-text-group-categories {}
+.wrapper-box-content-text-group-categories {
+    margin: -40px 0px 0px 80px;
+}
 
 .wrapper-box-content-group-cat {
+    margin-top: 10px;
     width: 100px;
     color: white;
     background-color: blue;
@@ -174,9 +184,12 @@
     border-radius: 3px;
 }
 
-.wrapper-box-content-group-heart {}
+.wrapper-box-content-group-heart {
+    margin: -30px 0px 0px 0px;
+}
 
 .fa-solid.fa-heart {
+    margin: 0px 0px 0px 220px;
     font-size: 25px;
     color: red;
 }
