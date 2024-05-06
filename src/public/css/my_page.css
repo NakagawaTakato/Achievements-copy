@@ -8,7 +8,7 @@
 
 .container-leftandright {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
 }
 
 .container-exit {
@@ -94,8 +94,6 @@
 .favorite {
     width: 100%;
     margin: 52px 0px 0px 0px;
-    position: relative;
-    left: 310px;
 }
 
 .wrapper {
@@ -104,8 +102,7 @@
 }
 
 .wrapper-box {
-    margin: 110px 0px 0px 120px;
-    padding-left: 0px;
+    margin: 110px 500px 0px 0px;
     width: 276px;
     height: auto;
     box-sizing: border-box;
