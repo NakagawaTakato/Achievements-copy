@@ -6,6 +6,11 @@
     margin: -27px 0px 0px 50px;
 }
 
+.container-leftandright {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .container-exit {
     color: white;
     background-color: #305DFF;
