@@ -8,7 +8,7 @@
 
 .container-leftandright {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .container-exit {
@@ -80,38 +80,6 @@
     padding: 2px;
 }
 
-.container-box-about-sub {
-    position: absolute;
-    top: 10px;
-    left: 90px;
-}
-
-.container-box-about-shop {
-    position: absolute;
-    top: 60px;
-    left: 20px;
-}
-
-.container-box-about-time {
-    position: absolute;
-    top: 120px;
-    left: 20px;
-}
-
-.container-box-about-number {
-    position: absolute;
-    top: 150px;
-    left: 20px;
-}
-
-.container-box-sub,
-.container-box-shop,
-.container-box-date,
-.container-box-time,
-.container-box-number {
-    color: white;
-}
-
 .container-box-delete {
     position: absolute;
     top: 25px;
@@ -122,15 +90,18 @@
     color: #FFFFFF;
 }
 
-
 .wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+}
+
+.favorite {
+    margin: 52px 0px 0px 70px;
 }
 
 .wrapper-box {
-    width: 21%;
+    margin: 90px 0px 0px 70px;
+    width: 22.3%;
     height: auto;
     padding: 10px;
     box-sizing: border-box;
@@ -139,7 +110,7 @@
 .wrapper-box-img-detail {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    width: 100%;
+    width: 130%;
     height: auto;
     position: relative;
     z-index: 1;
