@@ -117,19 +117,15 @@
     color: #FFFFFF;
 }
 
-.favorite {
-    margin: 0px 0px 0px 500px;
-}
 
 .wrapper {
     display: flex;
     flex-wrap: wrap;
-    margin: 0px 0px 0px 490px;
     gap: 40px;
 }
 
 .wrapper-box {
-    width: 32%;
+    width: 21%;
     height: auto;
     padding: 10px;
     box-sizing: border-box;
