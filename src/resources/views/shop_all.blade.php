@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault(); // フォームの送信を防ぐ
             var icon = button.querySelector('.fa-heart');
             icon.style.color = 'red'; // アイコンの色を赤に変更
+            button.form.submit(); // フォームを送信
         });
     });
 });
