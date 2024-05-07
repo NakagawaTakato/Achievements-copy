@@ -98,16 +98,31 @@
     left: 170px;
 }
 
+@media (min-width: 1000px) and (max-width: 1500px) {
+    .favorite {
+        width: 100%;
+        margin: 52px 100px 0px 0px;
+        position: relative;
+        left: 170px;
+    }
+}
+
 .wrapper {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .wrapper-box {
-    margin: 110px 600px 0px 0px;
-    width: 278px;
-    height: auto;
-    box-sizing: border-box;
+    flex-basis: 278px;
+    margin: 100px 0px 20px -50px;
+}
+
+@media (min-width: 1000px) and (max-width: 1500px) {
+    .wrapper-box {
+        width: 100%;
+        margin: 100px 0px 20px -50px;
+    }
 }
 
 .wrapper-box-img-detail {
