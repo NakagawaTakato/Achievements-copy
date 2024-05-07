@@ -94,6 +94,8 @@
 .favorite {
     width: 100%;
     margin: 52px 0px 0px 0px;
+    position: relative;
+    left: 170px;
 }
 
 .wrapper {
@@ -102,7 +104,7 @@
 }
 
 .wrapper-box {
-    margin: 110px 0px 0px 0px;
+    margin: 110px 600px 0px 0px;
     width: 278px;
     height: auto;
     box-sizing: border-box;
