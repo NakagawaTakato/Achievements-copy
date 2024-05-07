@@ -78,4 +78,16 @@
 </div>
 @endsection
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var heartButtons = document.querySelectorAll('.wrapper-box-content-heart');
 
+    heartButtons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); // フォームの送信を防ぐ
+            var icon = button.querySelector('.fa-heart');
+            icon.style.color = 'red'; // アイコンの色を赤に変更
+        });
+    });
+});
+</script>

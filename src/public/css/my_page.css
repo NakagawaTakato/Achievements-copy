@@ -95,15 +95,12 @@
     width: 100%;
     margin: 52px 0px 0px 0px;
     position: relative;
-    left: 170px;
+    left: 120px;
 }
 
 @media (min-width: 1000px) and (max-width: 1500px) {
     .favorite {
-        width: 100%;
-        margin: 52px 100px 0px 0px;
-        position: relative;
-        left: 170px;
+        white-space: nowrap;
     }
 }
 
