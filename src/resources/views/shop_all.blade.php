@@ -69,7 +69,15 @@
       <form action="/like_thanks" method="POST" >
         @csrf
         <input type="hidden" name="author_id" value="{{$author->id}}">
-        <button type="submit" class="wrapper-box-content-heartred"><i class="fa-solid fa-heart"></i></button>
+        @if( Auth::check() )
+          @if($author->blackred == 1)
+          @csrf
+            <button type="submit" class="wrapper-box-content-heartred"><i class="fa-solid fa-heart"></i></button>
+          @else
+          @csrf
+            <button type="submit" class="wrapper-box-content-heartnone"><i class="fa-solid fa-heart"></i></button>
+          @endif
+        @endif
       </form>
     </div>
   </div>

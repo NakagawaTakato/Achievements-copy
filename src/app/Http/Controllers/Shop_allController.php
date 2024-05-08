@@ -92,7 +92,7 @@ class Shop_allController extends Controller
     public function like_thanks(Request $request)
     {
         $authorId = $request->input('author_id');
-        Author::where('id', $authorId)->update(['is_correct' => true]);
+        Author::where('id', $authorId)->update(['is_correct' => true, 'blackred' => true]);
         return view('like_thanks');
     }
     
