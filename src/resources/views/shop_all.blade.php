@@ -69,7 +69,7 @@
       <form action="/like_thanks" method="POST" >
         @csrf
         <input type="hidden" name="author_id" value="{{$author->id}}">
-        <button type="submit" class="wrapper-box-content-heart"><i class="fa-solid fa-heart"></i></button>
+        <button type="submit" class="wrapper-box-content-heartred"><i class="fa-solid fa-heart"></i></button>
       </form>
     </div>
   </div>
@@ -78,17 +78,4 @@
 </div>
 @endsection
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var heartButtons = document.querySelectorAll('.wrapper-box-content-heart');
 
-    heartButtons.forEach(function(button) {
-        button.addEventListener('click', function(event) {
-            event.preventDefault(); // フォームの送信を防ぐ
-            var icon = button.querySelector('.fa-heart');
-            icon.style.color = 'red'; // アイコンの色を赤に変更
-            button.form.submit(); // フォームを送信
-        });
-    });
-});
-</script>

@@ -23,6 +23,7 @@ class CreateAuthorsTable extends Migration
             $table->string('shop', 100);
             $table->string('group', 200);
             $table->boolean('is_correct');
+            $table->boolean('blackred');
             $table->timestamps();
         });
     }

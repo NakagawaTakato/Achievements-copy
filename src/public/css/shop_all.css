@@ -119,7 +119,7 @@
     border: none;
 }
 
-.wrapper-box-content-heart {
+.wrapper-box-content-heartred {
     background: none;
     border: none;
     position: absolute;
@@ -127,9 +127,9 @@
     left: 180px;
     width: 40px;
     height: 40px;
+    color: #EEEEEE;
 }
 
 .fa-solid.fa-heart {
     font-size: 24px;
-    color: #EEEEEE;
 }
