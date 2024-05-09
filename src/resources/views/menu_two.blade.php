@@ -14,7 +14,7 @@
         <div class="container-group">
             <a href="#" class="container-group-text_one">Home</a>
             <a href="http://localhost/" class="container-group-text_two">Logout</a>
-            <a href="http://localhost/shop_all" class="container-group-text_three">Mypage</a>
+            <a href="/shop_all" class="container-group-text_three">Mypage</a>
         </div>
     </div>
 </form>
