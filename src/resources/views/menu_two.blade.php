@@ -6,18 +6,18 @@
 @endsection
 
 @section('content')
-<form class="form" action="/logout" method="post">
-     @csrf
-    <div class="container">
-        <a href="#" class="container-exit"><i class="fa-solid fa-xmark"></i></a>
+<div class="container">
+    <a href="#" class="container-exit"><i class="fa-solid fa-xmark"></i></a>
 
-        <div class="container-group">
-            <a href="#" class="container-group-text_one">Home</a>
-            <a href="http://localhost/" class="container-group-text_two">Logout</a>
-            <a href="/shop_all" class="container-group-text_three">Mypage</a>
-        </div>
+    <div class="container-group">
+        <a href="#" class="container-group-text_one">Home</a>
+        <form class="form" action="/logout" method="post">
+            @csrf
+            <button type="submit">Logout</button>
+        </form>
+        <a href="/shop_all" class="container-group-text_three">Mypage</a>
     </div>
-</form>
+</div>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var closeButton = document.querySelector('.container-exit');
