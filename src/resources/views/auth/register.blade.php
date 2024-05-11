@@ -18,7 +18,7 @@
             <i class="fa-solid fa-user"></i>
             <input type="text" name="name" placeholder="Username" class="container-group-text_one" value="{{ old('name') }}" />
             <div class="form__error">
-                @error('username')
+                @error('name')
                 {{ $message }}
                 @enderror
             </div>
