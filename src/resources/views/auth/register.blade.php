@@ -5,8 +5,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 @endsection
 
+@section('link')
+<a class="header__link" href="/register/thanks">login</a>
+@endsection
+
 @section('content')
-<form class="form" action="/register/thanks" method="post">
+<form class="form" action="/register" method="post">
     @csrf
     <div class="container">
         <a href="#" class="container-exit"><i class="fa-solid fa-bars"></i></a>
