@@ -17,7 +17,7 @@ use App\Http\Controllers\Shop_allController;
 
 Route::get('/', [ShopController::class, 'index']);
 Route::get('/search', [Shop_allController::class, 'search']);
-Route::post('/register/thanks', [ShopController::class, 'thanks']);
+Route::post('/register', [ShopController::class, 'register']);
 Route::middleware('auth')->group(function () {
     Route::post('/menu_two', [ShopController::class, 'menu_two']);
     Route::get('/shop_all', [Shop_allController::class, 'shop_all']);

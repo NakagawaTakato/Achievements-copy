@@ -5,10 +5,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 @endsection
 
-@section('link')
-<a class="header__link" href="/register/thanks">login</a>
-@endsection
-
 @section('content')
 <form class="form" action="/register" method="post">
     @csrf
@@ -46,7 +42,7 @@
             <i class="fa-solid fa-lock"></i>
             <input type="password" name="password_confirmation" placeholder="確認用" class="container-group-text_three" />
             <div class="form__button">
-                <button class="form__button-submit" type="submit">登録</button>
+                <input class="form__button-submit" type="submit" value="登録">
             </div>
         </div>
 
