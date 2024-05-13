@@ -16,9 +16,4 @@ class ShopController extends Controller
         return view('thanks');
     }
 
-    public function menu_two(Request $request)
-    {
-        return view('menu_two');
-    }
-
 }
