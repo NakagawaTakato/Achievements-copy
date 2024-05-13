@@ -16,7 +16,7 @@
         <div class="container-group">
             <div class="container-group-title">Registration</div>
             <i class="fa-solid fa-user"></i>
-            <input type="text" name="name" placeholder="Username" class="container-group-text_one" value="{{ old('name') }}" />
+            <input type="text" name="name" id="name" placeholder="Username" class="container-group-text_one" value="{{ old('name') }}" />
             <div class="form__error">
                 @error('name')
                 {{ $message }}
@@ -24,7 +24,7 @@
             </div>
             <br/>
             <i class="fa-solid fa-envelope"></i>
-            <input type="email" name="email" placeholder="Email" class="container-group-text_two" value="{{ old('email') }}" />
+            <input type="mail" name="email" id="email" placeholder="Email" class="container-group-text_two" value="{{ old('email') }}" />
             <div class="form__error">
                 @error('email')
                 {{ $message }}
@@ -32,7 +32,7 @@
             </div>
             <br/>
             <i class="fa-solid fa-lock"></i>
-            <input type="password" name="password" placeholder="Password" class="container-group-text_three" />
+            <input type="password" name="password" id="password" placeholder="Password" class="container-group-text_three" />
             <div class="form__error">
                 @error('password')
                 {{ $message }}
