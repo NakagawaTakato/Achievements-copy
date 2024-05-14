@@ -21,6 +21,10 @@
     font-weight: bold;
 }
 
+.container-group-logout {
+    color: blue;
+}
+
 .container-group a {
     display: block;
     text-align: center;

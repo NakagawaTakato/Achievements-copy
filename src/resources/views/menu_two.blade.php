@@ -13,7 +13,7 @@
         <a href="#" class="container-group-text_one">Home</a>
         <form class="form" action="/logout" method="post">
             @csrf
-            <button type="submit">Logout</button>
+            <input class="container-group-logout" type="submit" value="logout">
         </form>
         <a href="/shop_all" class="container-group-text_three">Mypage</a>
     </div>

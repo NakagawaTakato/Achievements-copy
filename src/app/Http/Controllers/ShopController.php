@@ -21,4 +21,8 @@ class ShopController extends Controller
         return view('register');
     }
 
+    public function menu_two()
+    {
+        return view('menu_two');
+    }
 }
